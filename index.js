@@ -5,7 +5,21 @@ const app = express();
 
 
 app.get('/' ,(req, res) =>{
-    res.send("Thank you for calling me....yeaaaa");
+    const fruit ={
+        product: "ada",
+        price: 220 
+    }
+    res.send(fruit);
 })
 
-app.listen(5000, () => console.log('listening to port 5000'));
+
+app.get('/fruit/banana', (req, res) =>{
+    res.send({fruit: 'banana', quantity: 1000, price: 10000});
+})
+
+app.listen('/users/:id', (req, res) =>{
+    console.log(req.params);
+})
+
+app.listen(8080, () => console.log('listening to port 8080'));
+
